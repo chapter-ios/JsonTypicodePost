@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GeneralNetworkingHandler
 
 final class MockPostsRemoteDataSource: PostsRemoteDataSource {
     let posts: [Post]
