@@ -16,7 +16,9 @@ struct PostsRemoteDataSourceImpl: PostsRemoteDataSource {
     let networking: Networking
 
     func fetchPosts() async throws -> [Post] {
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
-        return try await networking.get(url)
+        return try await networking.get(
+            "https://jsonplaceholder.typicode.com/posts",
+            token: nil
+        )
     }
 }
