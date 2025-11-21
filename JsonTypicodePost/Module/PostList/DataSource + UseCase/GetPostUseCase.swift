@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GeneralNetworkingHandler
 
 struct GetPostsUseCase {
     private let repository: PostsRemoteDataSource

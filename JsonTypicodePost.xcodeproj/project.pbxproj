@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3690B0152ED00D09008C3221 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3690B0142ED00D09008C3221 /* Alamofire */; };
 		3690B0182ED00D13008C3221 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3690B0172ED00D13008C3221 /* Swinject */; };
+		3690B0812ED01736008C3221 /* GeneralNetworkingHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 3690B0802ED01736008C3221 /* GeneralNetworkingHandler */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3690B0152ED00D09008C3221 /* Alamofire in Frameworks */,
+				3690B0812ED01736008C3221 /* GeneralNetworkingHandler in Frameworks */,
 				3690B0182ED00D13008C3221 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +123,7 @@
 			packageProductDependencies = (
 				3690B0142ED00D09008C3221 /* Alamofire */,
 				3690B0172ED00D13008C3221 /* Swinject */,
+				3690B0802ED01736008C3221 /* GeneralNetworkingHandler */,
 			);
 			productName = JsonTypicodePost;
 			productReference = 3690AFE12ED00CCE008C3221 /* JsonTypicodePost.app */;
@@ -207,6 +210,7 @@
 			packageReferences = (
 				3690B0132ED00D09008C3221 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3690B0162ED00D13008C3221 /* XCRemoteSwiftPackageReference "Swinject" */,
+				3690B07D2ED01714008C3221 /* XCLocalSwiftPackageReference "../GeneralNetworkingHandler" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3690AFE22ED00CCE008C3221 /* Products */;
@@ -572,6 +576,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		3690B07D2ED01714008C3221 /* XCLocalSwiftPackageReference "../GeneralNetworkingHandler" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../GeneralNetworkingHandler;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		3690B0132ED00D09008C3221 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -601,6 +612,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3690B0162ED00D13008C3221 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		3690B0802ED01736008C3221 /* GeneralNetworkingHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GeneralNetworkingHandler;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

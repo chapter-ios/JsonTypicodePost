@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GeneralNetworkingHandler
 
 protocol PostsRemoteDataSource {
     func fetchPosts() async throws -> [Post]
