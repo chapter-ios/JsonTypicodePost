@@ -8,29 +8,51 @@
 import XCTest
 @testable import JsonTypicodePost
 
-final class JsonTypicodePostTests: XCTestCase {
+final class PostsViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_loadPosts_success() async {
+        // Given
+        let mockPosts = [
+            Post(id: 1, title: "Title 1", body: "Body 1"),
+            Post(id: 2, title: "Title 2", body: "Body 2")
+        ]
+
+        let mockDataSource = MockPostsRemoteDataSource(
+            posts: mockPosts,
+            shouldFail: false
+        )
+
+        let useCase = GetPostsUseCase(repository: mockDataSource)
+        let vm = PostsViewModel(getPostsUseCase: useCase)
+
+        // When
+        await vm.loadPosts()
+
+        // Then
+        XCTAssertEqual(vm.posts, mockPosts)
+        XCTAssertEqual(vm.state, .loaded)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    func test_loadPosts_apiError_failure() async {
+        // Given
+        let mockDataSource = MockPostsRemoteDataSource(
+            posts: [],
+            shouldFail: true
+        )
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let useCase = GetPostsUseCase(repository: mockDataSource)
+        let vm = PostsViewModel(getPostsUseCase: useCase)
+
+        // When
+        await vm.loadPosts()
+
+        // Then
+        switch vm.state {
+        case .failed(let message):
+            XCTAssertEqual(message, "Mock server error")
+        default:
+            XCTFail("Expected .failed state, got \(vm.state)")
         }
     }
-
 }

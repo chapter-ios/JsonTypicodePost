@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3690B0152ED00D09008C3221 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3690B0142ED00D09008C3221 /* Alamofire */; };
+		3690B0182ED00D13008C3221 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3690B0172ED00D13008C3221 /* Swinject */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		3690AFF22ED00CD0008C3221 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3690B0152ED00D09008C3221 /* Alamofire in Frameworks */,
+				3690B0182ED00D13008C3221 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = JsonTypicodePost;
 			packageProductDependencies = (
+				3690B0142ED00D09008C3221 /* Alamofire */,
+				3690B0172ED00D13008C3221 /* Swinject */,
 			);
 			productName = JsonTypicodePost;
 			productReference = 3690AFE12ED00CCE008C3221 /* JsonTypicodePost.app */;
@@ -195,6 +204,10 @@
 			);
 			mainGroup = 3690AFD82ED00CCE008C3221;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3690B0132ED00D09008C3221 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3690B0162ED00D13008C3221 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3690AFE22ED00CCE008C3221 /* Products */;
 			projectDirPath = "";
@@ -558,6 +571,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3690B0132ED00D09008C3221 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		3690B0162ED00D13008C3221 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3690B0142ED00D09008C3221 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3690B0132ED00D09008C3221 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3690B0172ED00D13008C3221 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3690B0162ED00D13008C3221 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3690AFD92ED00CCE008C3221 /* Project object */;
 }
